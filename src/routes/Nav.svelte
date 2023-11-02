@@ -6,31 +6,32 @@
     // On route change
     $: if($navigating) resetNavbar();
     function resetNavbar () {
+        // Close mobile menu
         pagesChecked = false;
     }
 </script>
 
-<navbar class="navbar">
+<nav>
     <div class="container">
         <a class="logo" href="/">Tomi Koskinen</a>
 
-        <!-- Buttons for opening and closing mobile menu -->
+        <!-- Button for opening and closing mobile menu -->
         <input type="checkbox" id="pages-input" bind:checked={pagesChecked}>
         <label for="pages-input" id="pages-button" />
 
         <!-- Page navigation -->
         <div class="pages">
-            <a class="page-link" href="/contact">Contact</a>
-            <a class="page-link" href="/gallery">Gallery</a>
-            <a class="page-link" href="/software">Software</a>
-            <a class="page-link" href="/blog">Blog</a>
-            <a class="page-link" href="/">Home</a>
+            <a href="/contact">Contact</a>
+            <a href="/gallery">Gallery</a>
+            <a href="/software">Software</a>
+            <a href="/blog">Blog</a>
+            <a href="/">Home</a>
         </div>
     </div>
-</navbar>
+</nav>
 
 <style>
-    .navbar {
+    nav {
         position: fixed;
         width: 100%;
         height: 50px;
@@ -54,13 +55,13 @@
         float: right;
         background-color: none;
     }
-    .page-link {
+    .pages a {
         width: 100px;
         float: right;
         text-align: center;
         font-size: var(--fontSize2);
     }
-    .page-link:hover {
+    .pages a:hover {
         text-decoration: underline;
     }
     #pages-button {
@@ -74,6 +75,7 @@
         display: none;
     }
 
+    /* Responsive mobile view */
     @media (max-width: 650px) {
         .pages {
             visibility: hidden;
@@ -89,7 +91,7 @@
             height: 100%;
             background-color: white;
         }
-        .page-link {
+        .pages a {
             width: 100%;
             border-bottom: 1px solid black;
         }
@@ -98,6 +100,7 @@
             margin-left: 10px;
             background-color: black;
         }
+        /* Logic for opening mobile menu */
         #pages-input:checked ~ .pages {
             visibility: visible;
             opacity: 1;

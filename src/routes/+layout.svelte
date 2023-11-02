@@ -3,14 +3,14 @@
     import "./app.css";
 
     // Components
-    import Navbar from './Navbar.svelte';
+    import Navbar from './Nav.svelte';
 </script>
 
 <head>
 
 </head>
 
-<Navbar />
 <main>
+    <Navbar />
     <slot />
 </main>
