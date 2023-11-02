@@ -6,11 +6,7 @@
     import Navbar from './Nav.svelte';
 </script>
 
-<head>
-
-</head>
-
+<Navbar />
 <main>
-    <Navbar />
     <slot />
 </main>
