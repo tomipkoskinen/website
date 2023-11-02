@@ -1,0 +1,27 @@
+/* Variables */
+:root {
+    --containerWidth: 800px;
+    --containerPadding: 20px;
+    --fontSize1: 16px;
+    --fontSize2: 14px;
+    --fontSize3: 10px;
+    --fontColor1: rgb(0, 0, 0);
+    --fontColor2: rgb(0, 0, 0);
+}
+
+html {
+    font-family: 'Open Sans', sans-serif;
+    scroll-behavior: auto;
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+.container {
+    max-width: var(--containerWidth);
+    margin: 0 auto 0 auto;
+    padding: 0 var(--containerPadding) 0 var(--containerPadding);
+}
+.page {
+    margin-top: 50px;
+}
