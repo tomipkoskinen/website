@@ -49,14 +49,15 @@
         width: 100%;
         height: 50px;
         top: 0;
-        border-bottom: 1px solid black;
-        background-color: white;
+        border-bottom: 1px solid var(--lineColor);
+        background-color: var(--backgroundColor1);
     }
     .logo {
         line-height: 50px;
         width: auto;
         float: left;
         font-size: var(--fontSize2);
+        font-weight: 500;
         color: var(--fontColor1);
         text-decoration: none;
     }
@@ -83,6 +84,7 @@
         color: var(--fontColor1);
         text-decoration: none;
         font-size: var(--fontSize2);
+        font-weight: 500;
     }
     .pages a:hover {
         text-decoration: underline;
@@ -108,7 +110,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: white;
+            background-color: var(--backgroundColor1);
         }
         .pages li {
             float: none;
