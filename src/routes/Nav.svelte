@@ -44,11 +44,13 @@
 
 <style>
     nav {
+        z-index: 1;
         position: fixed;
         width: 100%;
         height: 50px;
         top: 0;
         border-bottom: 1px solid black;
+        background-color: white;
     }
     .logo {
         line-height: 50px;
@@ -72,7 +74,7 @@
     }
     .pages li {
         text-align: center;
-        float: right;
+        float: left;
     }
     .pages a {
         display: block;
