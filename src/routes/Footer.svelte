@@ -1,7 +1,6 @@
 <footer>
     <div class="container">
-        <p>Copyright by Tomi Koskinen</p>
-        <p>View the source code on <a href="">GitHub</a></p>
+        <p>© 2023 Tomi Koskinen. Source code available on <a href="https://github.com/topekodev/website">GitHub</a>.</p>
     </div>
 </footer>
 
@@ -11,13 +10,18 @@
         top: 100%;
         width: 100%;
         height: 50px;
-        text-align: center;
-        border-top: 1px solid var(--lineColor);
-        background-color: var(--backgroundColor2);
+        background-color: var(--backgroundColor1);
     }
     footer p {
+        display: inline;
         margin: 0;
-        line-height: 25px;
+        line-height: 50px;
+        color: var(--fontColor1);
         font-size: var(--fontSize3);
+    }
+    footer a {
+        color: var(--fontColor1);
+        font-size: var(--fontSize3);
+        text-decoration: underline;
     }
 </style>
