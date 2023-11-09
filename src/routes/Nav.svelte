@@ -1,13 +1,26 @@
 <script>
-    import { navigating } from '$app/stores';
+    import {page, navigating} from '$app/stores';
 
     let pagesChecked;
+    let currentRoute;
 
-    // On route change
-    $: if($navigating) resetNavbar();
+    getPage();
+
+    $: if ($navigating) {
+        getPage();
+        resetNavbar();
+    }
+
     function resetNavbar () {
-        // Close mobile menu
         pagesChecked = false;
+    }
+
+    function getPage() {
+        if ($navigating) {
+            currentRoute = $navigating.to.url.pathname.split('/')[1].toLowerCase();
+        } else {
+            currentRoute = $page.url.pathname.split('/')[1].toLowerCase();
+        }
     }
 </script>
 
@@ -23,19 +36,19 @@
         <div class="pages">
             <ul>
                 <li>
-                    <a href="/">Home</a>
+                    <a class:active-page={currentRoute == ""} href="/">Home</a>
                 </li>
                 <li>
-                    <a href="/blog">Blog</a>
+                    <a class:active-page={currentRoute == "blog"} href="/blog">Blog</a>
                 </li>
                 <li>
-                    <a href="/software">Software</a>
+                    <a class:active-page={currentRoute == "software"} href="/software">Software</a>
                 </li>
                 <li>
-                    <a href="/gallery">Gallery</a>
+                    <a class:active-page={currentRoute == "gallery"} href="/gallery">Gallery</a>
                 </li>
                 <li>
-                    <a href="/contact">Contact</a>
+                    <a class:active-page={currentRoute == "contact"} href="/contact">Contact</a>
                 </li>
             </ul>
         </div>
@@ -88,6 +101,9 @@
     }
     .pages a:hover {
         text-decoration: underline;
+    }
+    .active-page {
+        text-decoration: underline !important;
     }
     #pages-button {
         display: none;
