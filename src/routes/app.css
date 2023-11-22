@@ -10,6 +10,7 @@
     --fontSize3: 12px;
     --fontColor1: rgb(0, 0, 0);
     --fontColor2: rgb(85, 85, 85);
+    --fontColor3: rgb(40, 40, 225);
     --backgroundColor1: rgb(255, 255, 255);
     --backgroundColor2: rgb(245, 245, 245);
     --lineColor: rgb(85, 85, 85);
@@ -33,4 +34,10 @@ body {
 }
 .page {
     padding-top: 50px;
+}
+hr {
+    height: 1px;
+    width: 100%;
+    border: none;
+    background-color: var(--lineColor);
 }

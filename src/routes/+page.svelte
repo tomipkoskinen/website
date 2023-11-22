@@ -21,28 +21,29 @@
         <hr>
         <section class="recent-blogs">
             <h2>Recent blog posts</h2>
+            <div class="blog-post">
+                <p>YYYY-MM-DD</p>
+                <a href="/blog/id">Lorem ipsum dolor sit amet</a>
+            </div>
+            <a class="blog-open" href="/blog">Visit blog</a>
         </section>
     </div>
 </div>
 
 <style>
-    hr {
-        height: 1px;
-        width: 100%;
-        border: none;
-        background-color: var(--lineColor);
-    }
     header {
         padding: 50px 0 50px 0;
     }
     header h1 {
         font-size: var(--fontSize1);
+        color: var(--fontColor1);
         font-weight: 700;
     }
     header p {
         max-width: 350px;
         line-height: 20px;
         margin: 25px 0 25px 0;
+        color: var(--fontColor1);
         font-size: var(--fontSize2);
         font-weight: 500;
     }
@@ -57,6 +58,11 @@
         border: 1px solid var(--lineColor);
         border-radius: 2px;
         cursor: pointer;
+    }
+    .button:hover {
+        color: var(--backgroundColor1);
+        background-color: var(--fontColor1);
+        transition: color .05s, background .1s;
     }
     .socials {
         margin-bottom: 25px;
@@ -74,5 +80,31 @@
     .recent-blogs h2 {
         font-size: var(--fontSize1);
         font-weight: 500;
+    }
+    .recent-blogs > a {
+        display: block;
+        margin: 0;
+        color: var(--fontColor1);
+        font-size: var(--fontSize3);
+        font-weight: 500;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+    .blog-post {
+        margin: 0 0 10px 0;
+    }
+    .blog-post p {
+        margin: 0;
+        color: var(--fontColor1);
+        font-size: var(--fontSize3);
+    }
+    .blog-post a {
+        display: block;
+        margin: 0;
+        color: var(--fontColor1);
+        font-size: var(--fontSize2);
+        font-weight: 500;
+        text-decoration: underline;
+        cursor: pointer;
     }
 </style>
