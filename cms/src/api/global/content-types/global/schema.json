@@ -1,0 +1,42 @@
+{
+  "kind": "singleType",
+  "collectionName": "globals",
+  "info": {
+    "singularName": "global",
+    "pluralName": "globals",
+    "displayName": "Global",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "default": "Name"
+    },
+    "year": {
+      "type": "string",
+      "regex": "^\\d{4}$",
+      "default": "0000"
+    },
+    "email": {
+      "type": "email",
+      "default": "name@domain.tld"
+    },
+    "socials": {
+      "type": "component",
+      "repeatable": true,
+      "component": "global.social"
+    },
+    "github": {
+      "type": "string",
+      "default": "https://github.com/user"
+    },
+    "repository": {
+      "type": "string",
+      "default": "https://github.com/user/repo"
+    }
+  }
+}
