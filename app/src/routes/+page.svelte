@@ -1,5 +1,12 @@
 <script>
+    const cmsUrl = "http://localhost:1337";
+    export let data;
 
+    function formatDate(dateString) {
+        let date = new Date(dateString);
+        let formatted = date.toLocaleDateString("en-FI");
+        return formatted;
+    }
 </script>
 
 <svelte:head>
@@ -9,22 +16,31 @@
 <div class="home-page page">
     <div class="container">
         <header>
-            <h1>Hi, My name is Tomi!</h1>
-            <p>I am a software engineering student and hobbyist photographer based in Finland.</p>
+            {#if data.error }
+            <h1>Welcome to my website!</h1>
+            <p>There was a problem fetching content</p>
+            {:else}
+            <h1>{data.home.attributes.title}</h1>
+            <p>{data.home.attributes.description}</p>
+            {/if}
             <div class="socials">
-                <a href="https://github.com/topekodev" target="_blank"><img src="socials/github-logo.svg" alt="Github logo"></a>
-                <a href="https://mastodon.social/@topeko" rel="me" target="_blank"><img src="socials/mastodon-logo.svg" alt="Mastodon logo"></a>
-                <a href="https://instagram.com/tomipkoskinen" rel="me" target="_blank"><img src="socials/instagram-logo.svg" alt="Instagram logo"></a>
+                {#if !data.error}
+                {#each data.info.attributes.socials as social}
+                <a href="{social.url}" target="_blank"><img src="{cmsUrl}{social.icon.data.attributes.url}" alt="{social.name} logo"></a>
+                {/each}
+                {/if}
             </div>
             <a class="button" href="/contact">Contact</a>
         </header>
         <hr>
         <section class="recent-blogs">
             <h2>Recent blog posts</h2>
+            {#each data.blogs as blog}
             <div class="blog-post">
-                <p>YYYY-MM-DD</p>
-                <a href="/blog/id">Lorem ipsum dolor sit amet</a>
+                <p>{formatDate(blog.attributes.publishedAt)}</p>
+                <a href="/blog/{blog.attributes.slug}">{blog.attributes.title}</a>
             </div>
+            {/each}
             <a class="blog-open" href="/blog">Visit blog</a>
         </section>
     </div>
@@ -73,6 +89,8 @@
     }
     .socials img {
         height: 24px;
+        filter: grayscale(100%) contrast(500%);
+        -webkit-filter: grayscale(100%) contrast(500%);
     }
     .recent-blogs {
         padding: 25px 0 50px 0;
