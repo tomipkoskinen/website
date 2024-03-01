@@ -14,17 +14,13 @@
   "attributes": {
     "title": {
       "type": "string",
-      "default": "Hello world!"
+      "required": true,
+      "default": "Welcome to my website!"
     },
-    "seo": {
-      "type": "component",
-      "repeatable": false,
-      "component": "shared.seo",
-      "required": false
-    },
-    "about": {
+    "description": {
       "type": "text",
-      "default": "Lorem ipsum dolor sit amet."
+      "required": true,
+      "default": "Lorem ipsum dolor sit amet"
     }
   }
 }

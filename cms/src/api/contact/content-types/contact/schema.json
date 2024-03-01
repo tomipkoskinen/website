@@ -4,7 +4,8 @@
   "info": {
     "singularName": "contact",
     "pluralName": "contacts",
-    "displayName": "Contact"
+    "displayName": "Contact",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -13,7 +14,13 @@
   "attributes": {
     "title": {
       "type": "string",
-      "default": "Contact"
+      "required": true,
+      "default": "Contact me"
+    },
+    "description": {
+      "type": "text",
+      "required": true,
+      "default": "Lorem ipsum dolor sit amet."
     }
   }
 }
