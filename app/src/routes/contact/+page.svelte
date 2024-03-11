@@ -1,19 +1,31 @@
+<script>
+    export let data;
+</script>
+
 <div class="contact-page page">
     <div class="container">
         <header>
-            <h1>Contact me</h1>
-            <p>Easiest way to contact me is by sending an email. Encryption is possible with openPGP.</p>
-            <a href="">Download public key</a>
+            {#if data.error}
+            <h1>Error fetching content</h1>
+            {:else}
+            <h1>{data.contact.attributes.title}</h1>
+            <p>{data.contact.attributes.description}</p>
+            {/if}
         </header>
         <section class="email">
             <h2>Email</h2>
-            <a href="mailto:contact@tomikoskinen.com">contact@tomikoskinen.com</a>
+            {#if !data.error}
+            <a href="mailto:{data.info.attributes.email}">{data.info.attributes.email}</a>
+            {/if}
         </section>
         <section class="social-media">
             <h2>Social media</h2>
-            <p>Feel free to contact me on social media as well. Better for quick messages.</p>
             <div class="accounts">
-                <a href="">Name (@handle)</a>
+                {#if !data.error}
+                {#each data.info.attributes.socials as social}
+                <a href="{social.url}">{social.name} ({social.handle})</a>
+                {/each}
+                {/if}
             </div>
         </section>
     </div>
@@ -21,7 +33,7 @@
 
 <style>
     header {
-        padding: 50px 0 25px 0;
+        padding: 50px 0 0 0;
     }
     h1 {
         color: var(--fontColor1);

@@ -1,0 +1,11 @@
+.git
+.git*
+node_modules
+README.md
+LICENSE
+.vscode
+Dockerfile
+docker-compose.yml
+.svelte-kit
+build
+public

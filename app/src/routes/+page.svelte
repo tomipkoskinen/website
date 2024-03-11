@@ -16,7 +16,7 @@
 <div class="home-page page">
     <div class="container">
         <header>
-            {#if data.error }
+            {#if data.error}
             <h1>Welcome to my website!</h1>
             <p>There was a problem fetching content</p>
             {:else}
@@ -35,12 +35,14 @@
         <hr>
         <section class="recent-blogs">
             <h2>Recent blog posts</h2>
+            {#if !data.error}
             {#each data.blogs as blog}
             <div class="blog-post">
                 <p>{formatDate(blog.attributes.publishedAt)}</p>
                 <a href="/blog/{blog.attributes.slug}">{blog.attributes.title}</a>
             </div>
             {/each}
+            {/if}
             <a class="blog-open" href="/blog">Visit blog</a>
         </section>
     </div>
