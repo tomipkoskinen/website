@@ -37,7 +37,7 @@ jobs:
         run: |
           echo "${{ secrets.SERVER_SSH_KEY }}" > ssh_key.pem
           chmod 400 ssh_key.pem
-      - name: Pull latest docker imagea
+      - name: Pull latest docker image
         run: |
           ssh -o StrictHostKeyChecking=no -i ssh_key.pem ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "docker pull ${{ secrets.DOCKERHUB_USERNAME }}/website:latest"
       - name: Stop and remove existing container
@@ -47,3 +47,6 @@ jobs:
       - name: Run container
         run: |
           ssh -o StrictHostKeyChecking=no -i ssh_key.pem ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "docker run -d -p 4000:80 --name website ${{ secrets.DOCKERHUB_USERNAME }}/website:latest"
+      - name: Remove old image
+        run: |
+          ssh -o StrictHostKeyChecking=no -i ssh_key.pem ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "docker image prune -a -f"
