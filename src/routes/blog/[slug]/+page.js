@@ -1,12 +1,10 @@
 import { error } from '@sveltejs/kit'
+import { getPost } from '$lib/utils';
 
 export async function load({ params }) {
     try {
-        const blogData = await import(`../../../lib/blog/${params.slug}.md`);
-        const content = blogData.default;
-        const metadata = blogData.metadata;
-
-        return { content: content, metadata: metadata, slug: params.slug };
+        const blogData = await getPost(params.slug);
+        return blogData;
     } catch (e) {
         console.error(e);
         error(404, e);
