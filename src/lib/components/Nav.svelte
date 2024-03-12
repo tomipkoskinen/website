@@ -42,7 +42,7 @@
                     <a class:active-page={currentRoute == "blog"} href="/blog">Blog</a>
                 </li>
                 <li>
-                    <a class:active-page={currentRoute == "Projects"} href="/projects">Projects</a>
+                    <a class:active-page={currentRoute == "projects"} href="/projects">Projects</a>
                 </li>
                 <li>
                     <a class:active-page={currentRoute == "gallery"} href="/gallery">Gallery</a>
