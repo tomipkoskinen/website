@@ -34,8 +34,9 @@ jobs:
     needs: build
     steps:
       - name: Install SSH key
-        run: echo "${{ secrets.SERVER_SSH_KEY }}" > ssh_key.pem
-        run: chmod 400 ssh_key.pem
+        run: |
+          echo "${{ secrets.SERVER_SSH_KEY }}" > ssh_key.pem
+          chmod 400 ssh_key.pem
       - name: Pull latest docker imagea
         run: |
           ssh -o StrictHostKeyChecking=no -i ssh_key.pem ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "docker pull ${{ secrets.DOCKERHUB_USERNAME }}/website:latest"
