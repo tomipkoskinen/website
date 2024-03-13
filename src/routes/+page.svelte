@@ -1,10 +1,14 @@
 <script>
     export let data;
     const posts = data.posts;
+
+    import { formatDate } from '$lib/utils';
 </script>
 
 <svelte:head>
-
+    <title>Tomi Koskinen</title>
+    <meta name="description" content="Software Engineering Student at LUT University and a hobbyist photographer based in Lappenranta, Finland.">
+    <meta name="author" content="Tomi Koskinen">
 </svelte:head>
 
 <div class="home-page page">
@@ -25,7 +29,7 @@
             <h2>Recent blog posts</h2>
             {#each posts as post }
                 <div class="blog-post">
-                    <p>{post.metadata.date}</p>
+                    <p>{formatDate(post.metadata.date)}</p>
                     <a href="/blog/{post.slug}">{post.metadata.title}</a>
                 </div>
             {/each}
@@ -46,16 +50,16 @@
     header p {
         max-width: 350px;
         line-height: 20px;
-        margin: 25px 0 25px 0;
+        margin: 20px 0 30px 0;
         color: var(--fontColor1);
-        font-size: var(--fontSize2);
+        font-size: var(--fontSize3);
         font-weight: 500;
     }
     .button {
         padding: 5px 20px 5px 20px;
         line-height: 20px;
         color: var(--fontColor1);
-        font-size: var(--fontSize2);
+        font-size: var(--fontSize3);
         font-weight: 500;
         text-decoration: none;
         background-color: var(--backgroundColor1);
@@ -84,14 +88,14 @@
         padding: 25px 0 50px 0;
     }
     .recent-blogs h2 {
-        font-size: var(--fontSize1);
+        font-size: var(--fontSize2);
         font-weight: 500;
     }
     .recent-blogs > a {
         display: block;
         margin: 0;
         color: var(--fontColor1);
-        font-size: var(--fontSize3);
+        font-size: var(--fontSize4);
         font-weight: 500;
         text-decoration: underline;
         cursor: pointer;
@@ -102,13 +106,13 @@
     .blog-post p {
         margin: 0;
         color: var(--fontColor1);
-        font-size: var(--fontSize3);
+        font-size: var(--fontSize4);
     }
     .blog-post a {
         display: block;
         margin: 0;
         color: var(--fontColor1);
-        font-size: var(--fontSize2);
+        font-size: var(--fontSize3);
         font-weight: 500;
         text-decoration: underline;
         cursor: pointer;

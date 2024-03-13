@@ -14,5 +14,8 @@
 		"svelte": "^4.2.12",
 		"vite": "^5.1.4"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"mdsvex-relative-images": "^1.0.3"
+	}
 }

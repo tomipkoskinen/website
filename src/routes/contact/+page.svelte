@@ -1,3 +1,9 @@
+<svelte:head>
+    <title>Contact - Tomi Koskinen</title>
+    <meta name="description" content="Get in contact.">
+    <meta name="author" content="Tomi Koskinen">
+</svelte:head>
+
 <div class="contact-page page">
     <div class="container">
         <header>
@@ -30,44 +36,34 @@
     }
     header p {
         line-height: 20px;
-        margin: 10px 0 10px 0;
+        margin: 20px 0 30px 0;
         color: var(--fontColor1);
-        font-size: var(--fontSize2);
-        font-weight: 500;
-    }
-    header a {
-        margin: 0;
-        color: var(--fontColor3);
         font-size: var(--fontSize3);
-        font-weight: 400;
-        text-decoration: underline;
-        cursor: pointer;
+        font-weight: 500;
     }
     section {
         margin: 0 0 25px 0;
     }
     section h2 {
+        margin: 0 0 10px 0;
         color: var(--fontColor1);
-        font-size: var(--fontSize1);
+        font-size: var(--fontSize2);
         font-weight: 500;
     }
     section p {
         margin: 0;
         color: var(--fontColor1);
-        font-size: var(--fontSize2);
+        font-size: var(--fontSize3);
         font-weight: 500;
     }
     section a {
         display: block;
         margin: 0;
         color: var(--fontColor1);
-        font-size: var(--fontSize2);
+        font-size: var(--fontSize3);
         font-weight: 500;
         text-decoration: underline;
         cursor: pointer;
-    }
-    .accounts {
-        margin-top: 10px;
     }
     .accounts a {
         margin: 0 0 5px 0;

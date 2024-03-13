@@ -1,15 +1,15 @@
 import { error } from '@sveltejs/kit';
 import { json } from '@sveltejs/kit';
-import { getPosts } from '$lib/utils';
+import { getPhotos, getAlbums } from '$lib/server';
 
 export async function GET({ params }) {
-    const category = params.category;
+    const album = params.album;
     try {
-        let posts = await getPosts(category);
+        const data = await getPhotos(album);
 
         return json({
-            "posts": posts,
-            "category": category
+            "albums": data,
+            "album": album
         });
     } catch (e) {
         console.error(e);

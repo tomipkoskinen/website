@@ -69,7 +69,7 @@
         line-height: 50px;
         width: auto;
         float: left;
-        font-size: var(--fontSize2);
+        font-size: var(--fontSize3);
         font-weight: 500;
         color: var(--fontColor1);
         text-decoration: none;
@@ -96,7 +96,7 @@
         width: 100px;
         color: var(--fontColor1);
         text-decoration: none;
-        font-size: var(--fontSize2);
+        font-size: var(--fontSize3);
         font-weight: 500;
     }
     .pages a:hover {

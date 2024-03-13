@@ -2,7 +2,7 @@ import { error } from '@sveltejs/kit'
 
 export async function load({ fetch }) {
     try {
-        let response = await fetch('/api/posts');
+        let response = await fetch('/api/blog');
         if (!response.ok) {
             throw new Error(response.status);
         }

@@ -1,0 +1,25 @@
+{
+    "order": "1",
+    "title": "Black and White",
+    "desc": "Collection of black and white photos",
+     "photos": [
+        {
+            "order": "1",
+            "name": "stockholm_rain",
+            "alt": "Stockholm rain",
+            "orientation": "landscape"
+        },
+        {
+            "order": "2",
+            "name": "helsinki_boat",
+            "alt": "Helsinki boat",
+            "orientation": "portrait"
+        },
+        {
+            "order": "3",
+            "name": "helsinki_corner_glass",
+            "alt": "Helsinki glass building corner",
+            "orientation": "portrait"
+        }
+    ]
+}

@@ -19,11 +19,11 @@
         margin: 0;
         line-height: 50px;
         color: var(--fontColor1);
-        font-size: var(--fontSize3);
+        font-size: var(--fontSize4);
     }
     footer a {
         color: var(--fontColor1);
-        font-size: var(--fontSize3);
+        font-size: var(--fontSize4);
         text-decoration: underline;
     }
 </style>

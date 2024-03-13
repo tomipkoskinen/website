@@ -5,9 +5,10 @@
 :root {
     --containerWidth: 800px;
     --containerPadding: 20px;
-    --fontSize1: 18px;
-    --fontSize2: 14px;
-    --fontSize3: 12px;
+    --fontSize1: 20px;
+    --fontSize2: 16px;
+    --fontSize3: 14px;
+    --fontSize4: 12px;
     --fontColor1: rgb(0, 0, 0);
     --fontColor2: rgb(85, 85, 85);
     --fontColor3: rgb(40, 40, 225);
