@@ -1,5 +1,5 @@
-export async function getPosts(category) {
-    category = category ?? null;
+export async function getPosts(tags) {
+    tags = tags ?? null;
 
     let posts = [];
 
@@ -23,8 +23,8 @@ export async function getPosts(category) {
         return new Date(b.metadata.date) - new Date(a.metadata.date);
     });
 
-    if (category) {
-        posts = posts.filter(post => post.metadata.categories.includes(category));
+    if (tags) {
+        posts = posts.filter(post => post.metadata.tags.includes(tags));
     }
 
     return posts;

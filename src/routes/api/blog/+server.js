@@ -8,7 +8,7 @@ export async function GET() {
 
         return json({
             "posts": data,
-            "category": null
+            "tags": null
         });
     } catch (e) {
         console.error(e);

@@ -3,13 +3,13 @@ import { json } from '@sveltejs/kit';
 import { getPosts } from '$lib/server';
 
 export async function GET({ params }) {
-    const category = params.category;
+    const tags = params.tags;
     try {
-        let posts = await getPosts(category);
+        let posts = await getPosts(tags);
 
         return json({
             "posts": posts,
-            "category": category
+            "tags": tags
         });
     } catch (e) {
         console.error(e);

@@ -1,5 +1,3 @@
-
-
 <footer>
     <div class="container">
         <p>© 2024 Tomi Koskinen. Source code available on <a href="https://github.com/topekodev/website">GitHub</a>.</p>

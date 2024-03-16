@@ -1,3 +1,43 @@
+.blog-post header {
+    padding: 50px 0 20px 0;
+}
+.blog-post header h1 {
+    font-size: var(--fontSize1);
+    color: var(--fontColor1);
+    font-weight: 700;
+    margin: 0 0 10px 0;
+}
+.blog-post header p {
+    font-size: var(--fontSize3);
+    color: var(--fontColor1);
+    font-weight: 500;
+    margin: 0;
+}
+.blog-post header .desc {
+    margin: 10px 0 20px 0;
+}
+.blog-post header .author {
+    font-weight: 700;
+}
+.blog-post header .date {
+    display: inline-block;
+}
+.blog-post .categories {
+    margin-top: 10px;
+}
+.blog-post .categories a {
+    padding: 1px 5px 1px 5px;
+    margin-right: 5px;
+    line-height: 20px;
+    color: var(--backgroundColor1);
+    background-color: var(--fontColor1);
+    font-size: var(--fontSize3);
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
 .blog-content h2 {
     font-size: var(--fontSize2);
     color: var(--fontColor1);
