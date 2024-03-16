@@ -1,6 +1,6 @@
 import { error } from '@sveltejs/kit';
 import { json } from '@sveltejs/kit';
-import { getPhotos, getAlbums } from '$lib/server';
+import { getPhotos } from '$lib/server';
 
 export async function GET({ params }) {
     const album = params.album;

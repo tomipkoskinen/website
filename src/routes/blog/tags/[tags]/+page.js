@@ -1,8 +1,9 @@
 import { error } from '@sveltejs/kit'
 
 export async function load({ fetch, params }) {
+    const tags = params.tags;
     try {
-        let response = await fetch(`/api/blog/tags/${params.tags}`);
+        let response = await fetch(`/api/blog/tags/${tags}`);
         if (!response.ok) {
             throw new Error(response.status);
         }
