@@ -1,8 +1,9 @@
 import { error } from '@sveltejs/kit'
 
-export async function load({ fetch }) {
+export async function load({ fetch, params }) {
+    const album = params.album;
     try {
-        let response = await fetch('/api/gallery.json');
+        let response = await fetch(`/api/gallery/album/${album}`);
         if (!response.ok) {
             throw new Error(response.status);
         }

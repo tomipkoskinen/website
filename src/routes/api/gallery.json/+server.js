@@ -1,14 +1,13 @@
 import { error } from '@sveltejs/kit';
 import { json } from '@sveltejs/kit';
-import { getPhotos } from '$lib/server';
+import { getAlbums } from '$lib/server';
 
 export async function GET() {
     try {
-        const data = await getPhotos();
+        const data = await getAlbums();
 
         return json({
-            "albums": data,
-            "album": null
+            albums: data
         });
     } catch (e) {
         console.error(e);

@@ -35,27 +35,21 @@ export async function getPosts(page=1, limit=3, tag=null) {
     });
 }
 
-export async function getPhotos(album) {
-    album = album ?? null;
-
-    let photos = [];
+export async function getPhotos(album=null) {
     const paths = import.meta.glob('../../gallery/photos/*.{jpg,jpeg,png,webp,avif}', {
         query: 'url',
         eager: true
     });
 
-    for (const path in paths) {
-        const file = await paths[path];
+    let photos = new Map();
+    const files = await Promise.all(Object.values(paths));
+    files.forEach((file, i) => {
+        const path = Object.keys(paths)[i];
         const name = path.split('/').at(-1)?.split('.').slice(0, -1).join('.');
         const url = file.default;
 
-        const photo = {
-            name,
-            url
-        }
-
-        photos.push(photo);
-    }
+        photos.set(name, { name, url });
+    });
 
     let albums = await getAlbums();
     if (album) {
@@ -64,7 +58,7 @@ export async function getPhotos(album) {
 
     for (const album of albums) {
         album.photos = album.photos.map(photo => {
-            const matchingPhoto = photos.find(p => p.name === photo.name);
+            const matchingPhoto = photos.get(photo.name);
             if (matchingPhoto) {
                 photo.url = matchingPhoto.url;
             }
@@ -72,7 +66,10 @@ export async function getPhotos(album) {
         });
     }
 
-    return albums;
+    return json({
+        "albums": albums,
+        "album": album
+    });
 }
 
 export async function getAlbums() {
@@ -84,12 +81,11 @@ export async function getAlbums() {
     for (const path in paths) {
         const file = await paths[path];
         const id = path.split('/').at(-1)?.split('.').slice(0, -1).join('.');
-        let jsonData = file.default;
-        let photos = jsonData.photos.sort((a, b) => a.order - b.order);
-        photos = jsonData.photos.map(photo => {
-            const { order, ...rest } = photo;
-            return rest;
-        });
+        const jsonData = file.default;
+
+        const photos = jsonData.photos
+            .sort((a, b) => a.order - b.order)
+            .map(({ order, ...rest }) => rest);
 
         const album = {
             order: jsonData.order,
@@ -102,11 +98,9 @@ export async function getAlbums() {
         albums.push(album);
     }
 
-    albums = albums.sort((a, b) => a.order - b.order);
-    albums = albums.map(album => {
-        const { order, ...rest } = album;
-        return rest;
-    });
+    albums = albums
+        .sort((a, b) => a.order - b.order)
+        .map(({ order, ...rest }) => rest);
 
     return albums;
 }
