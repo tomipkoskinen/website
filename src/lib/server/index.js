@@ -1,10 +1,11 @@
-export async function getPosts(tags) {
-    tags = tags ?? null;
+import { json } from '@sveltejs/kit';
 
-    let posts = [];
+export async function getPosts(page=1, limit=3, tag=null) {
+    const rangeStart = (page - 1) * limit;
+    const rangeEnd = page * limit;
 
     const paths = import.meta.glob('/src/blog/*.md', { eager: true });
-
+    let posts = [];
     for (const path in paths) {
         const file = await paths[path];
         const slug = path.split('/').at(-1)?.replace('.md', '');
@@ -14,20 +15,24 @@ export async function getPosts(tags) {
             metadata: file.metadata
         }
 
-        if (post.metadata.published === "true") {
+        if (post.metadata.published === "true" && (!tag || post.metadata.tags.includes(tag))) {
             posts.push(post);
         }
     }
 
-    posts = posts.sort(function(a,b){
+    posts = posts.sort(function(a, b) {
         return new Date(b.metadata.date) - new Date(a.metadata.date);
+    }).slice(rangeStart, rangeEnd);
+
+    const total = Math.ceil(posts.length / limit);
+
+    return json({
+        "posts": posts,
+        "tags": tag,
+        "page": page,
+        "total": total,
+        "limit": limit,
     });
-
-    if (tags) {
-        posts = posts.filter(post => post.metadata.tags.includes(tags));
-    }
-
-    return posts;
 }
 
 export async function getPhotos(album) {

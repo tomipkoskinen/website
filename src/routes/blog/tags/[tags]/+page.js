@@ -3,7 +3,7 @@ import { error } from '@sveltejs/kit'
 export async function load({ fetch, params }) {
     const tags = params.tags;
     try {
-        let response = await fetch(`/api/blog/tags/${tags}`);
+        let response = await fetch(`/api/blog/tags/${tags}/page/1`);
         if (!response.ok) {
             throw new Error(response.status);
         }

@@ -6,7 +6,7 @@ date: "01-01-2024"
 updated: "02-01-2024"
 published: "true"
 tags:
-  - "Test"
+  - "test"
 ---
 
 ![Picture!](./assets/steve-busch-hHl3xmyF0Jc-unsplash.jpg "Space picture")
