@@ -1,7 +1,7 @@
 {
     "order": "1",
-    "title": "Black and White",
-    "desc": "Collection of black and white photos",
+    "title": "Collection",
+    "desc": "Collection of photos",
      "photos": [
         {
             "order": "1",
@@ -17,9 +17,15 @@
         },
         {
             "order": "3",
-            "name": "helsinki_corner_glass",
-            "alt": "Helsinki glass building corner",
+            "name": "helsinki_building_half_vegetation",
+            "alt": "Helsinki building half vegetation",
             "orientation": "portrait"
+        },
+        {
+            "order": "4",
+            "name": "helsinki_restaurant_reflection",
+            "alt": "Helsinki restaurant reflection",
+            "orientation": "landscape"
         }
     ]
 }
