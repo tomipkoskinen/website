@@ -2,19 +2,18 @@
     export let album;
 </script>
 
-<div class="album">
-    <section>
-        {#each album.photos as image }
-            {#if image.orientation === "landscape"}
-                <img class="landscape" src={image.url} alt="{image.alt}">
-            {:else if image.orientation === "portrait"}
-                <img class="portrait" src={image.url} alt="{image.alt}">
-            {:else}
-                <img class="other" src={image.url} alt="{image.alt}">
-            {/if}
-        {/each}
-    </section>
-</div>
+
+<section>
+    {#each album.photos as image }
+        {#if image.orientation === "landscape"}
+            <img class="landscape" src={image.url} alt="{image.alt}">
+        {:else if image.orientation === "portrait"}
+            <img class="portrait" src={image.url} alt="{image.alt}">
+        {:else}
+            <img class="other" src={image.url} alt="{image.alt}">
+        {/if}
+    {/each}
+</section>
 
 <style>
     section {

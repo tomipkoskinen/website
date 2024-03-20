@@ -1,30 +1,29 @@
 /* Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
 /* Variables */
 :root {
-    --containerWidth: 800px;
+    --containerWidth: 1000px;
     --containerPadding: 20px;
-    --fontSize1: 20px;
-    --fontSize2: 16px;
-    --fontSize3: 14px;
-    --fontSize4: 12px;
-    --fontColor1: rgb(0, 0, 0);
-    --fontColor2: rgb(85, 85, 85);
-    --fontColor3: rgb(40, 40, 225);
-    --backgroundColor1: rgb(255, 255, 255);
-    --backgroundColor2: rgb(245, 245, 245);
-    --lineColor: rgb(85, 85, 85);
+    --fontSize1: 30px;
+    --fontSize2: 24px;
+    --fontSize3: 16px;
+    --fontSize4: 14px;
+    --foregroundColor: #201F29;
+    --linkColor: rgb(40, 40, 225);
+    --backgroundColor1: #FFFFFF;
+    --backgroundColor2: #E8EAF8;
 }
 
 html {
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Inter", sans-serif;
     scroll-behavior: auto;
 }
 body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
+    background-color: var(--backgroundColor1);
 }
 .container {
     max-width: var(--containerWidth);
@@ -34,11 +33,52 @@ body {
     padding-right: var(--containerPadding);
 }
 .page {
-    padding-top: 50px;
+    padding-top: 40px;
 }
 hr {
     height: 1px;
     width: 100%;
     border: none;
-    background-color: var(--lineColor);
+    background-color: var(--foregroundColor);
+}
+
+h1 {
+    font-size: var(--fontSize1);
+    color: var(--foregroundColor);
+    font-weight: 700;
+}
+h2 {
+    font-size: var(--fontSize2);
+    color: var(--foregroundColor);
+    font-weight: 700;
+}
+p {
+    font-size: var(--fontSize3);
+    color: var(--foregroundColor);
+    font-weight: 500;
+    line-height: 20px;
+}
+a {
+    color: var(--foregroundColor);
+    font-size: var(--fontSize3);
+    font-weight: 500;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.button {
+    padding: 8px 20px 8px 20px;
+    line-height: 20px;
+    color: var(--foregroundColor);
+    font-size: var(--fontSize3);
+    font-weight: 500;
+    text-decoration: none;
+    background-color: var(--backgroundColor1);
+    border: 1px solid var(--foregroundColor);
+    border-radius: 2px;
+    cursor: pointer;
+}
+.button:hover {
+    color: var(--backgroundColor1);
+    background-color: var(--foregroundColor);
+    transition: color .05s, background .1s;
 }

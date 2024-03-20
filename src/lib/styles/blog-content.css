@@ -1,58 +1,24 @@
-.blog-post header {
-    padding: 50px 0 20px 0;
-}
-.blog-post header h1 {
-    font-size: var(--fontSize1);
-    color: var(--fontColor1);
+.blog-content h1 {
+    font-size: var(--fontSize2);
+    color: var(--foregroundColor);
     font-weight: 700;
-    margin: 0 0 10px 0;
+    margin: 20px 0 10px 0;
 }
-.blog-post header p {
-    font-size: var(--fontSize3);
-    color: var(--fontColor1);
-    font-weight: 500;
-    margin: 0;
-}
-.blog-post header .desc {
-    margin: 10px 0 20px 0;
-}
-.blog-post header .author {
-    font-weight: 700;
-}
-.blog-post header .date {
-    display: inline-block;
-}
-.blog-post .categories {
-    margin-top: 10px;
-}
-.blog-post .categories a {
-    padding: 1px 5px 1px 5px;
-    margin-right: 5px;
-    line-height: 20px;
-    color: var(--backgroundColor1);
-    background-color: var(--fontColor1);
-    font-size: var(--fontSize3);
-    font-weight: 500;
-    text-decoration: none;
-    border-radius: 2px;
-    cursor: pointer;
-}
-
 .blog-content h2 {
     font-size: var(--fontSize2);
-    color: var(--fontColor1);
+    color: var(--foregroundColor);
     font-weight: 700;
     margin: 20px 0 10px 0;
 }
 .blog-content p {
     font-size: var(--fontSize3);
-    color: var(--fontColor1);
+    color: var(--foregroundColor);
     font-weight: 500;
     margin: 0 0 20px 0;
 }
 .blog-content a {
     font-size: var(--fontSize3);
-    color: var(--fontColor3);
+    color: var(--linkColor);
     font-weight: 500;
     margin: 0 0 20px 0;
     text-decoration: underline;
@@ -60,13 +26,13 @@
 }
 .blog-content strong {
     font-size: var(--fontSize3);
-    color: var(--fontColor1);
+    color: var(--foregroundColor);
     font-weight: 700;
     margin: 0 0 20px 0;
 }
 .blog-content em {
     font-size: var(--fontSize3);
-    color: var(--fontColor1);
+    color: var(--foregroundColor);
     font-weight: 500;
     margin: 0 0 20px 0;
 }
@@ -91,7 +57,7 @@
 }
 .blog-content code {
     font-size: var(--fontSize3);
-    color: var(--fontColor1);
+    color: var(--foregroundColor);
     font-weight: 500;
     background-color: var(--backgroundColor2);
     word-wrap: break-word;
@@ -107,36 +73,33 @@
 .blog-content th, .blog-content td {
     padding: 5px;
     text-align: left;
-    border: 1px solid var(--lineColor);
+    border: 1px solid var(--foregroundColor);
     font-weight: 500;
 }
 .blog-content th {
     font-weight: 700;
 }
-.blog-content tr:nth-child(even) {
-    background-color: var(--backgroundColor2);
-}
 .blog-content ul {
     padding-left: 20px;
     font-size: var(--fontSize3);
-    color: var(--fontColor1);
+    color: var(--foregroundColor);
     font-weight: 500;
     margin: 0 0 10px 0;
 }
 .blog-content ol {
     padding-left: 20px;
     font-size: var(--fontSize3);
-    color: var(--fontColor1);
+    color: var(--foregroundColor);
     font-weight: 500;
     margin: 0 0 10px 0;
 }
 .blog-content blockquote {
     padding: 10px;
     font-size: var(--fontSize3);
-    color: var(--fontColor1);
+    color: var(--foregroundColor);
     font-weight: 500;
     background-color: var(--backgroundColor2);
-    border-left: 2px solid var(--lineColor);
+    border-left: 2px solid var(--foregroundColor);
     border-radius: 2px;
     margin: 0 0 10px 0;
 }

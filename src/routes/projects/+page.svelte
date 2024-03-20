@@ -5,5 +5,13 @@
 </svelte:head>
 
 <div class="container page">
-    <h1>Projects</h1>
+    <header>
+        <h1>Projects</h1>
+    </header>
 </div>
+
+<style>
+    header {
+        padding: 50px 0 0 0;
+    }
+</style>

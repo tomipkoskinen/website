@@ -22,9 +22,4 @@
     header {
         padding: 50px 0 10px 0;
     }
-    header h1 {
-        font-size: var(--fontSize1);
-        color: var(--fontColor1);
-        font-weight: 700;
-    }
 </style>

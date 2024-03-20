@@ -12,15 +12,15 @@
         height: 50px;
         background-color: var(--backgroundColor1);
     }
-    footer p {
+    p {
         display: inline;
         margin: 0;
         line-height: 50px;
-        color: var(--fontColor1);
+        color: var(--foregroundColor);
         font-size: var(--fontSize4);
     }
-    footer a {
-        color: var(--fontColor1);
+    a {
+        color: var(--foregroundColor);
         font-size: var(--fontSize4);
         text-decoration: underline;
     }

@@ -1,13 +1,13 @@
 <script>
     import { formatDate } from '$lib/utils';
-    import '$lib/styles/blog-post.css';
+    import '$lib/styles/blog-content.css';
 
     export let post;
     const { title, date, updated, desc, author, tags } = post.metadata;
     const content = post.content;
 </script>
 
-<div class="blog-post">
+<div>
     <header>
         <h1>{title}</h1>
         <p class="desc">{desc}</p>
@@ -26,3 +26,35 @@
         <svelte:component this={content} />
     </section>
 </div>
+
+<style>
+    header {
+        padding: 50px 0 20px 0;
+    }
+    header .desc {
+        margin: 10px 0 20px 0;
+    }
+    header .author {
+        font-weight: 700;
+        margin: 10px 0 10px 0;
+    }
+    header .date {
+        display: inline-block;
+        margin: 0;
+    }
+    header .categories {
+        margin-top: 10px;
+    }
+    header .categories a {
+        padding: 1px 5px 1px 5px;
+        margin-right: 5px;
+        line-height: 20px;
+        color: var(--backgroundColor1);
+        background-color: var(--foregroundColor);
+        font-size: var(--fontSize3);
+        font-weight: 500;
+        text-decoration: none;
+        border-radius: 2px;
+        cursor: pointer;
+    }
+</style>
